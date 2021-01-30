@@ -15,10 +15,10 @@
     let nextButton = document.getElementById('next');
     let prevButton = document.getElementById('prev');
     let img = document.getElementById('img');
-    let i = 0;
-    img.src = images[i];
+    let i = 0; //where the counter starts
+    img.src = images[i];//the source of the image
 
-//i want to go to the next image- access the next image - also define current image 
+//I want to go to the next image- to access the next image 
     function changeNextImg(){
 
         if(i < images.length -1){//if its 0 or 1 index keep adding
