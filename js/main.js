@@ -15,8 +15,8 @@
     let nextButton = document.getElementById('next');
     let prevButton = document.getElementById('prev');
     let img = document.getElementById('img');
-    let i = 0; //where the counter starts
-    img.src = images[i];//the source of the image
+    let i = 0; //where the counter starts & the index within the array. 
+    img.src = images[i];//the source of the image 
 
 //I want to go to the next image- to access the next image 
     function changeNextImg(){
