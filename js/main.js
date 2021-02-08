@@ -1,51 +1,66 @@
+/*  1. Click right button
+    2. Image changes to next image
+    3. Click left button
+    4. Image goes back to the previous image
+    5. If I click left button first, the image will go to the last image*/
 
-/* 1. Click right button
-    2. image changes to second image
-    3. click left button
-    4. image goes back to the previous image
-    5. if I click left button first, the image will go to the last image*/
+
+
+let nextButton = document.getElementById('next');
+let prevButton = document.getElementById('prev');
+let img = document.getElementById('img');
+
+// //This is where the counter starts and is the index within the array. 
+var i = 0;
+
+// //This is telling us where the source of the img tag is
+img.src = images[i];
+
+
+
+//The following function will help us transition to the next image.  
+nextButton.addEventListener('click', function() {
 
     let images = [
         "img/one.jpg",
         "img/two.jpg",
         "img/three.jpg",
         "img/four.jpg"
-    ]; 
+        ];
 
-    let nextButton = document.getElementById('next');
-    let prevButton = document.getElementById('prev');
-    let img = document.getElementById('img');
-    let i = 0; //where the counter starts & the index within the array. 
-    img.src = images[i];//the source of the image 
-
-//I want to go to the next image- to access the next image 
-    function changeNextImg(){
-
-        if(i < images.length -1){//if its 0 or 1 index keep adding
-            i++;
-        } else {// if index is 2 then go back to index 0 
-            i=0;
-        }
-        img.src = images[i];
-
-    }
-    
-    nextButton.addEventListener('click', changeNextImg);
-
-    function changePrevImg(){
-       
-
-        if(i > 0 && i < images.length){//if i = 1 or 2
-            i--;
-        } else if(i === 0) {
-            i = 3; // if its num 1 go to image num 3
-        }
-        img.src = images[i];
+    //If the index is either 0, 1, or 2 keep adding. 
+    if (i < images.length - 1) {
+        i++;
+    // If the index is 2 (if it is the last image) then go back to the first image
+    } else {
+        i = 0;
     }
 
-    prevButton.addEventListener('click', changePrevImg);
+    //The source of the images will be according to the previous conditional statement
+     img.src = images[i];
 
-      
+});
 
 
-  
+//The following function will help us transition to the previous image.  
+prevButton.addEventListener('click', function () {
+
+    let images = [
+        "img/one.jpg",
+        "img/two.jpg",
+        "img/three.jpg",
+        "img/four.jpg"
+        ];
+
+    //If the index is 1, 2 or 3 then keep subtracting (keep going to the previous image)
+    if (i > 0 && i < images.length) {
+        i--;
+    } else if (i === 0) {
+        // If the slider is on the first image, then go to the last image. ie. If the image index is 1 go to index 3.
+        i = 3;
+    }
+
+    //The source of the images will be according to the previous conditional statement
+    img.src = images[i];
+
+});
