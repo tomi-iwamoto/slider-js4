@@ -5,10 +5,17 @@
     5. If I click left button first, the image will go to the last image*/
 
 
+let images = [
+    "img/one.jpg",
+    "img/two.jpg",
+    "img/three.jpg",
+    "img/four.jpg"
+    ];
 
 let nextButton = document.getElementById('next');
 let prevButton = document.getElementById('prev');
 let img = document.getElementById('img');
+
 
 // //This is where the counter starts and is the index within the array. 
 var i = 0;
@@ -44,7 +51,7 @@ nextButton.addEventListener('click', function() {
 
 //The following function will help us transition to the previous image.  
 prevButton.addEventListener('click', function () {
-
+    
     let images = [
         "img/one.jpg",
         "img/two.jpg",
